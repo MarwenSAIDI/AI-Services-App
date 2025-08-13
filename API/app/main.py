@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import inference
+from app.routers import inference, training
 
 def create_app():
     """
@@ -9,6 +9,7 @@ def create_app():
 
     # Include the routes
     app_.include_router(inference.router, prefix="/api/v1")
+    app_.include_router(training.router, prefix="/api/v1")
 
     return app_
 
